@@ -11,6 +11,10 @@ public class Sell implements Serializable{
 	private String description;
 	private String img;
 
+	public Sell() {
+		super();
+	}
+	
 	public String getImg() {
 		return img;
 	}
