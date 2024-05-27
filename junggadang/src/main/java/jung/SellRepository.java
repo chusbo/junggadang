@@ -5,13 +5,15 @@ import java.util.ArrayList;
 public class SellRepository {
 	
 	private ArrayList<Sell> listOfSell=new ArrayList<Sell>();
-	private ArrayList<Sell> listOfSell1=new ArrayList<Sell>();
 	private ArrayList<Sell> listOfSell2=new ArrayList<Sell>();
-	
+		
 	private static SellRepository instance = new SellRepository();
 	
 	public static SellRepository getInstance() {
 		return instance;
+	}	
+	public void addSell(Sell create) {
+	    listOfSell2.add(create);
 	}
 	
 	public SellRepository(){
@@ -58,13 +60,6 @@ public ArrayList<Sell> getAllSell(){
 	return listOfSell;
 }
 
-public void addSell(Sell sell) {
-	listOfSell.add(sell);
-}
-
-public ArrayList<Sell> getAllSell1(){
-	return listOfSell1;
-}
 public ArrayList<Sell> getAllSell2(){
 	return listOfSell2;
 }
@@ -80,5 +75,18 @@ public Sell getSellByName(String info) {
 		}
 	}
 	return sellbyname;
+}
+
+public Sell getSellByName2(String info) {
+	Sell sellbyname2=null;
+	
+	for (int i=0; i < listOfSell2.size(); i++) {
+		Sell sell2 = listOfSell2.get(i);
+		if(sell2 != null && sell2.getName() !=null && sell2.getName().equals(info)) {
+			sellbyname2=sell2;
+			break;
+		}
+	}
+	return sellbyname2;
 }
 }
