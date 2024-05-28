@@ -47,8 +47,7 @@ public class Sell implements Serializable{
 		this.description = description;
 	}
 
-public Sell(String img, String name, int price) {
-	this.img=img;
+public Sell(String name, int price) {
 	this.name=name;
 	this.price=price;
  }

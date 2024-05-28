@@ -3,17 +3,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
 <style>
-	div
+	.div1
 	{text-align:center;}
 	.div1
 	{background-color:white; margin-top:50px;}
 	.div1 a
 	{text-decoration:none; color:gray;}	
 	.div1 a:hover
-	{color:black; transition: .3s ease-in-out}		
+	{color:black; transition: .3s ease-in-out}
+	.div2
+	{text-align:center;}	
 	.images
 	{width:600px;
 	-webkit-filter: blur(3px);

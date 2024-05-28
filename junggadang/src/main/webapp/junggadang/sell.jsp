@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
 	<style>	
 	.img {width: auto; height: auto;}
 
@@ -36,8 +36,10 @@
 <!--------------------------헤더------------------------------------>
 
 	<div class="p-5 mb-4 bg-body-tertiary rounded-3">
-		<h1 class="display-5 fw-bold">디저트목록</h1>
-		<p class="col-md-8 fs-4">DessertList</p>
+		<div class="container-fluid py-5">
+			<h1 class="display-5 fw-bold">디저트목록</h1>
+			<p class="col-md-8 fs-4">DessertList</p>
+		</div>
 	</div>
 	<div class="list">
 		<h4>판매</h4>
@@ -52,7 +54,8 @@
 			<div class="carousel-inner">			
 				<div class="carousel-item active" data-bs-interval="5000">
 					<%
-					ArrayList<Sell> listOfSell = SellRepository.getAllSell();
+					SellRepository create = SellRepository.getInstance();
+					ArrayList<Sell> listOfSell = create.getAllSell();
 					%>
 
 					<div class="row align-items-md-stretch text-center">
@@ -62,7 +65,7 @@
 						%>
 						<div class="col-md-3">
 							<div class="h-100 p-2 box">
-								<img src="<%=sell.getImg()%> " class="img">
+								<img src="../resources/images/<%=sell.getImg()%> " class="img">
 							<div class="content">
 								<h5>
 									<b><%=sell.getName()%></b>
@@ -95,7 +98,7 @@
 						%>
 						<div class="col-md-3">
 							<div class="h-100 p-2 box">
-								<img src="<%=sell.getImg()%> " class="img">
+								<img src="../resources/images/<%=sell.getImg()%> " class="img">
 							<div class="content">
 								<h5>
 									<b><%=sell.getName()%></b>
@@ -145,9 +148,10 @@
 		for (int i = 0; i < listOfSell2.size(); i++) {
 			Sell sell2 = listOfSell2.get(i);
 		%>
+		
 		<div class="col-md-3">
 			<div class="h-100 p-2 box">
-				<img src="<%=sell2.getImg()%> " class="img">
+				<img src="../resources/images/<%=sell2.getImg()%> " class="img">
 				<div class="content">
 					<h5>
 						<b><%=sell2.getName()%></b>
@@ -175,7 +179,7 @@
 						%>
 						<div class="col-md-3">
 							<div class="h-100 p-2 box">
-								<img src="<%=sell.getImg()%> " class="img">
+								<img src="../resources/images/<%=sell.getImg()%> " class="img">
 								<div class="content">
 									<h5>
 										<b><%=sell.getName()%></b>
@@ -196,6 +200,7 @@
 						%>
 				</div>
 </article>
+
 <!--------------------------판매목록------------------------------------>
 	
 	<br>

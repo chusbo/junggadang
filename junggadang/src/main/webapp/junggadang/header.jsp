@@ -44,7 +44,7 @@
             <a class="nav-link active" aria-current="page" href="http://localhost:8085/junggadang/junggadang/sell.jsp">디저트 목록</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:8085/junggadang/junggadang/addsell.jsp">등록</a> 
+            <a class="nav-link" href="http://localhost:8085/junggadang/junggadang/addsell.jsp">등록</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -24,18 +24,17 @@
 	</div>
 		<%
 			String name=request.getParameter("name");
-			SellRepository create = SellRepository.getInstance();
-			Sell sell2 = SellRepository.getSellByName(name);
-			
+			SellRepository create=SellRepository.getInstance();
+			Sell sell= SellRepository.getSellByName(name);			
 		%>
 		<div class="row align-items-md-stretch">
 				<div class="imgbox col-md-6">
-						<img src="<%=sell2.getImg()%>" class="img-">
+						<img src="../resources/images/<%=sell.getImg()%> " style="width:70%">
 					</div>
 				<div class="infobox col-md-6">
-					<h3><b><%=sell2.getName()%></b></h3>
-					<p><%=sell2.getDescription()%></p>
-					<p><%=sell2.getPrice() %>원</p>
+					<h3><b><%=sell.getName()%></b></h3>
+					<p><%=sell.getDescription()%></p>
+					<p><%=sell.getPrice() %>원</p>
 				</div>
 			
 		</div>
