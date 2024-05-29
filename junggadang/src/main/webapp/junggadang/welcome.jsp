@@ -37,7 +37,7 @@
 		<h1><b>정가당</b></h1>
 		<br>
 		
-		<a href="http://localhost:8085/junggadang/junggadang/sell.jsp"><img src="../images/join.jpg" class="images"><h1>입장하기</h1></a>
+		<a href="http://localhost:8085/junggadang/junggadang/sell.jsp"><img src="../resources/images/join.jpg" class="images"><h1>입장하기</h1></a>
 	</div>
 	<hr>
 	<div class="div2">

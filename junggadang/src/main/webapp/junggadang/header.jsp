@@ -23,7 +23,7 @@
  	 <div class="container-fluid">
   
   	 <div class="a">
-        <a href="http://localhost:8085/junggadang/junggadang/welcome.jsp"><img src="../images/home.png" alt="Home"></a>
+        <a href="http://localhost:8085/junggadang/junggadang/welcome.jsp"><img src="../resources/images/home.png" alt="Home"></a>
         <h6 class="text"><b>정가당</b></h6>
     </div>
     

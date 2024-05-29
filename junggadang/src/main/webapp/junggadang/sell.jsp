@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="java.util.ArrayList" import="jung.Sell" %>
+	pageEncoding="UTF-8" import="java.util.ArrayList" import="jung.Sell" import="jung.Fileupload_process" isELIgnored="false" %>
 <jsp:useBean id="SellRepository" class="jung.SellRepository" scope="session" />
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
+<%
+	request.setCharacterEncoding("utf-8");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +36,7 @@
     .box .btn-container
     	{display: flex; justify-content: center; margin-top: auto;}
 </style>
-<title>Insert title here</title>
+<title>제과 목록</title>
 </head>
 <body>
 <!--------------------------헤더------------------------------------>
@@ -65,7 +73,7 @@
 						%>
 						<div class="col-md-3">
 							<div class="h-100 p-2 box">
-								<img src="../resources/images/<%=sell.getImg()%> " class="img">
+								<img src="../resources/images/<%=sell.getFilename()%> " class="img">
 							<div class="content">
 								<h5>
 									<b><%=sell.getName()%></b>
@@ -98,7 +106,7 @@
 						%>
 						<div class="col-md-3">
 							<div class="h-100 p-2 box">
-								<img src="../resources/images/<%=sell.getImg()%> " class="img">
+								<img src="../resources/images/<%=sell.getFilename()%> " class="img">
 							<div class="content">
 								<h5>
 									<b><%=sell.getName()%></b>
@@ -151,7 +159,7 @@
 		
 		<div class="col-md-3">
 			<div class="h-100 p-2 box">
-				<img src="../resources/images/<%=sell2.getImg()%> " class="img">
+				<img src="../resources/images/<%=sell2.getFilename()%> " class="img">
 				<div class="content">
 					<h5>
 						<b><%=sell2.getName()%></b>
@@ -179,7 +187,7 @@
 						%>
 						<div class="col-md-3">
 							<div class="h-100 p-2 box">
-								<img src="../resources/images/<%=sell.getImg()%> " class="img">
+								<img src="../resources/images/<%=sell.getFilename()%> " class="img">
 								<div class="content">
 									<h5>
 										<b><%=sell.getName()%></b>

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
 <%@ page import="jung.Sell" %>
 <%@ page import="jung.SellRepository" %>
@@ -12,11 +12,13 @@
 	
 	Integer price;
 	
-	if(Price.isEmpty())
-		price=0;
-	else
-		price=Integer.valueOf(Price);
 
+    if (Price == null || Price.isEmpty()) {
+        price = 0;
+    } else {
+        price = Integer.valueOf(Price);
+    }
+    
 	SellRepository create =SellRepository.getInstance();
 	
 	Sell newSell = new Sell();
@@ -27,3 +29,4 @@
 	
 	response.sendRedirect("sell.jsp");
 	%>
+ --%>

@@ -1,7 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.util.ArrayList" import="jung.Sell" %>
+    pageEncoding="UTF-8" import="java.util.ArrayList" import="jung.Sell" isELIgnored="false" %>
 <jsp:useBean id="SellRepository" class="jung.SellRepository" scope="session" />
-    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
+<%
+	request.setCharacterEncoding("utf-8");
+%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,11 +36,17 @@
 		%>
 		<div class="row align-items-md-stretch">
 				<div class="imgbox col-md-6">
-						<img src="../resources/images/<%=sell.getImg()%> " style="width:70%">
+						<img src="../resources/images/<%=sell.getFilename()%> " style="width:70%">
 					</div>
 				<div class="infobox col-md-6">
 					<h3><b><%=sell.getName()%></b></h3>
 					<p><%=sell.getDescription()%></p>
+					<p><b>제품번호</b> :<span class="badge text-bg-danger">
+					<%=sell.getNumber() %></span>
+					<p><b>분류</b> :<%=sell.getCategory() %>
+					<p><b>재고</b> :<%=sell.getStock() %>
+					<p><b>알레르기</b> :<%=sell.getAllergy() %>
+					<p><b>원산지</b> :<%=sell.getOrigin() %>				
 					<p><%=sell.getPrice() %>원</p>
 				</div>
 			

@@ -1,10 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.util.ArrayList" import="jung.Sell" import="jung.SellRepository" %>
+    pageEncoding="UTF-8" import="java.util.ArrayList" import="jung.Sell" import="jung.SellRepository" isELIgnored="false" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
+<%
+	request.setCharacterEncoding("utf-8");
+%>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>제과 등록</title>
 </head>
 <body>
 	<%@ include file = "header.jsp" %>
@@ -16,7 +25,7 @@
 		</div>
 	</div>
 	<div class="row align-items-md-stretch">
-		<form name="newDessert" action="./processAddDessert.jsp" class="form-horizontal" method="post" enctype="multipart/form-data">
+		<form name="newDessert" action="${contextPath}/fileupload55.do" class="form-horizontal" method="post" enctype="multipart/form-data">
 			<div class="mb-3 row">
 				<label class="col-sm-2">제과명</label>
 				<div class="col-sm-3">
@@ -36,6 +45,12 @@
 					class="form-control" placeholder="100자 이상 적어주세요"></textarea>
 				</div>
 			</div>
+	        <div class="mb-3 row">
+                <label class="col-sm-2">파일</label>
+                <div class="col-sm-5">
+                    <input type="file" name="filename" class="form-control">
+            </div>
+            </div>
 			<div class="mb-3 row">
 				<div class="col-sm-offset-2 col-sm-10">
 					<input type="submit" class="btn btn-primary" value="등록">
