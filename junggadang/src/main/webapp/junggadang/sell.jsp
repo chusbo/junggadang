@@ -13,7 +13,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
 	<style>	
 	.img {width: auto; height: auto;}
 

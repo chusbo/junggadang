@@ -79,6 +79,7 @@ public Sell getSellByName(String info) {
 			break;
 		}
 	}
+	
 	return sellbyname;
 }
 public void addSell(Sell create) {

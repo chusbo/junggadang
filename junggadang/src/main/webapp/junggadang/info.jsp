@@ -48,8 +48,7 @@
 					<p><b>알레르기</b> :<%=sell.getAllergy() %>
 					<p><b>원산지</b> :<%=sell.getOrigin() %>				
 					<p><%=sell.getPrice() %>원</p>
-				</div>
-			
+				</div>			
 		</div>
 	<br>
 	<%@ include file="footer.jsp"%>
