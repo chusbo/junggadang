@@ -32,7 +32,7 @@
 		<%
 			String name=request.getParameter("name");
 			SellRepository create=SellRepository.getInstance();
-			Sell sell= SellRepository.getSellByName(name);			
+			Sell sell= create.getSellByName(name);			
 		%>
 		<div class="row align-items-md-stretch">
 				<div class="imgbox col-md-6">
@@ -47,7 +47,7 @@
 					<p><b>재고</b> :<%=sell.getStock() %>
 					<p><b>알레르기</b> :<%=sell.getAllergy() %>
 					<p><b>원산지</b> :<%=sell.getOrigin() %>				
-					<p><%=sell.getPrice() %>원</p>
+					<p><b>가격</b><%=sell.getPrice() %>원</p>
 				</div>			
 		</div>
 	<br>
