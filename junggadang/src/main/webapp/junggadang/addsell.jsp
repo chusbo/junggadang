@@ -9,24 +9,29 @@
 	request.setCharacterEncoding("utf-8");
 %>
 <!DOCTYPE html>
-
 <html>
 <head>
+<meta charset="UTF-8">
 <link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
 <script type="text/javascript" src="../resources/js/validation.js"></script>
-<meta charset="UTF-8">
+<style>
+.all
+{margin:10px; padding:20px; box-shadow: 5px 5px 10px #ccc, inset -5px -5px 20px #fff;}
+</style>
+
 <title>제과 등록</title>
 </head>
 <body>
 	<%@ include file = "header.jsp" %>
-	
+
 	<div class = "p-5 mb-4 bg-body-teritary rounded-3">
 		<div class="container-fluid py-5">
 			<h1 class="display-5 fw-bold">제과 등록</h1>
 			<p class="col-md-8 fs-4">Dessert Addition</p>						
 		</div>
-		  	<a href="logout.jsp" class="btn btn-sm btn-sucess pull right">logout</a>          
+		  	<a href="logout.jsp" class="btn btn-sm btn-success pull right">logout</a>          
         </div>
+<div class="all">       
 	<div class="row align-items-md-stretch">
 		<form name="newDessert" action="${contextPath}/fileupload55.do" class="form-horizontal" method="post" enctype="multipart/form-data">			
 			<div class="mb-3 row">
@@ -92,6 +97,10 @@
 				</div>
 			</div>
 		</form>
-	</div>	
+	</div>
+</div>
+<br>
+<br>
+	<%@ include file="footer.jsp"%>
 </body>
 </html>

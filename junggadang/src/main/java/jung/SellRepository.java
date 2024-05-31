@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class SellRepository {
 	
 	private ArrayList<Sell> listOfSell=new ArrayList<Sell>();
-	private ArrayList<Sell> listOfSell2=new ArrayList<Sell>();
 		
 	private static SellRepository instance = new SellRepository();
 	
@@ -47,12 +46,11 @@ public class SellRepository {
 	listOfSell.add(sell1);
 	listOfSell.add(sell2);
 	listOfSell.add(sell3);
-	listOfSell.add(sell4);
-	
-	listOfSell2.add(sell5);
-	listOfSell2.add(sell6);
-	listOfSell2.add(sell7);
-	listOfSell2.add(sell8);
+	listOfSell.add(sell4);	
+	listOfSell.add(sell5);
+	listOfSell.add(sell6);
+	listOfSell.add(sell7);
+	listOfSell.add(sell8);
 	
 	}
 	
@@ -63,10 +61,6 @@ public static SellRepository getInstance() {
 
 public ArrayList<Sell> getAllSell(){
 	return listOfSell;
-}
-
-public ArrayList<Sell> getAllSell2(){
-	return listOfSell2;
 }
 
 public Sell getSellByName(String info) {

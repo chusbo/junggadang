@@ -15,10 +15,12 @@
         {margin-top: 10px;}
         .a img
         {margin-right: 2px;}
+        .head
+        {margin-bottom:10px;}
 	</style>
 <title>Insert title here</title>
 </head>
-<body>    
+<body> 
     <nav class="navbar bg-body-tertiary fixed-top">
  	 <div class="container-fluid">
   

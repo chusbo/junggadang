@@ -15,26 +15,42 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="../resources/css/bootstrap.min.css" />
 	<style>	
-	.img {width: auto; height: auto;}
+	.article
+		{padding:20px;}
+		
+	.img 
+		{width: 80%; height: 80%; margin:auto; border-radius:10px;}
 
-	.box {border: 1px solid #ccc; width: auto; height:100%; display: flex; flex-direction: column;}
+	.box 
+		{width: 100%; height:100%; display: flex; flex-direction: column; border-radius:10px; box-shadow: 5px 5px 10px #ccc, inset -5px -5px 20px #fff;}
 
-	.box h5 p {width: 100%;}
+	.box h5 p 
+		{width: 100%;}
 	
-	.best {color: red;}
+	.best 
+		{color: red;}
 
-	.list {display: flex;}
+	.list 
+		{display: flex;}
 
-	.point {margin-top: 10px;}
-	
-	button
-		{height:80%;}
+	.point 
+		{margin-top: 10px;}
 	
     .box .content
-    	{flex-grow: 1;}
+     	{flex-grow: 1;}
 
     .box .btn-container
     	{display: flex; justify-content: center; margin-top: auto;}
+    
+    .sub-title
+    	{text-align:center;}
+    
+    .category
+        {display: flex; justify-content: center; margin-bottom: 20px; }
+	
+	.category .icon1, .category .icon2, .category .icon3
+		{margin-right:20px;}
+    		
 </style>
 <title>제과 목록</title>
 </head>
@@ -45,173 +61,60 @@
 
 	<div class="p-5 mb-4 bg-body-tertiary rounded-3">
 		<div class="container-fluid py-5">
-			<h1 class="display-5 fw-bold">디저트목록</h1>
-			<p class="col-md-8 fs-4">DessertList</p>
+			<h1 class="display-5 fw-bold">Menu</h1>
 		</div>
 	</div>
-	<div class="list">
-		<h4>판매</h4>
-		<h4 class="best">
-			<b>베스트</b>
-		</h4>
-		<p class="point">...................................</p>
-	</div>
-
-	<article id="best">				
-		<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-			<div class="carousel-inner">			
-				<div class="carousel-item active" data-bs-interval="5000">
-					<%
-					SellRepository create = SellRepository.getInstance();
-					ArrayList<Sell> listOfSell = create.getAllSell();
-					%>
-
-					<div class="row align-items-md-stretch text-center">
-						<%
-						for (int i = 0; i < listOfSell.size(); i++) {
-							Sell sell = listOfSell.get(i);
-						%>
-						<div class="col-md-3">
-							<div class="h-100 p-2 box">
-								<img src="../resources/images/<%=sell.getFilename()%> " class="img">
-							<div class="content">
-								<h5>
-									<b><%=sell.getName()%></b>
-								</h5>
-								<p><%=sell.getDescription()%></p>
-								<p><%=sell.getPrice()%>원</p>	
-							</div>	
-<!--------------------------상세 정보------------------------------------>
-							<div class="btn-container">
-								<p><a href="./info.jsp?name=<%=sell.getName() %>"
-								class="btn btn-secondary" role="button"> 주문 하기 &raquo;</a>
-							</div>
-<!--------------------------상세 정보------------------------------------>
-							</div>
-						</div>
-						<%
-						}
-						%>
-					</div>
-				</div>			
-				<div class="carousel-item" data-bs-interval="5000">
-					<%
-					ArrayList<Sell> listOfSell1 = SellRepository.getAllSell();
-					%>
-
-					<div class="row align-items-md-stretch text-center">
-						<%
-						for (int i = 0; i < listOfSell.size(); i++) {
-							Sell sell = listOfSell.get(i);
-						%>
-						<div class="col-md-3">
-							<div class="h-100 p-2 box">
-								<img src="../resources/images/<%=sell.getFilename()%> " class="img">
-							<div class="content">
-								<h5>
-									<b><%=sell.getName()%></b>
-								</h5>
-								<p><%=sell.getDescription()%></p>
-								<p class="price"><%=sell.getPrice()%>원</p>
-							</div>
-<!--------------------------상세 정보------------------------------------>
-							<div class="btn-container">
-								<p><a href="./info.jsp?name=<%=sell.getName() %>"
-								class="btn btn-secondary" role="button"> 주문 하기 &raquo;</a>
-							</div>
-<!--------------------------상세 정보------------------------------------>
-							</div>							
-						</div>
-						<%
-						}
-						%>
-					</div>
-				</div>
-<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-</button>
-<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-</button> 
-			</div>
+<article class="article">
+	<div class="category align-items-md-stretch text-center">
+		<div class="icon1">
+			<p><a href="#dessertsection" class="btn btn-outline-secondary" role="button" style="font-size: 12px; padding: 5px 10px;">디저트</a>
 		</div>
-	</article>
-	<br>
-	<br>
-<!--------------------------판매목록------------------------------------>	
-<article>	
-	<div class="list">
-		<h4>판매 목록</h4>
-		<p class="point">...................................</p>
+		<div class="icon2">
+			<p><a href="#coffeesection" class="btn btn-outline-secondary" role="button" style="font-size: 12px; padding: 5px 10px;">커피</a>
+		</div>
+		<div class="icon3">
+			<p><a href="#cakesection" class="btn btn-outline-secondary" role="button" style="font-size: 12px; padding: 5px 10px;">케이크</a>
+		</div>
 	</div>
-
-	<%
-	ArrayList<Sell> listOfSell2 = SellRepository.getAllSell2();
-	%>
-
+	
+	<div class="align-itmes-md-stretch text-center" id="dessertsection">
+		<h2>디저트</h2>
+	</div>
+		<%
+			SellRepository create = SellRepository.getInstance();
+			ArrayList<Sell> listOfSell = create.getAllSell();
+		%>
 	<div class="row align-items-md-stretch text-center">
 		<%
-		for (int i = 0; i < listOfSell2.size(); i++) {
-			Sell sell2 = listOfSell2.get(i);
+			for (int i = 0; i < listOfSell.size(); i++) {
+			Sell sell = listOfSell.get(i);
 		%>
-		
-		<div class="col-md-3">
-			<div class="h-100 p-2 box">
-				<img src="../resources/images/<%=sell2.getFilename()%> " class="img">
+	<div class="col-md-2" style="margin:10px;">
+		<div class="h-100 p-2 box">
+			<img src="../resources/images/<%=sell.getFilename()%> " class="img">
 				<div class="content">
-					<h5>
-						<b><%=sell2.getName()%></b>
-					</h5>
-					<p><%=sell2.getDescription()%></p>
-					<p><%=sell2.getPrice()%>원</p>
+					<h5><b><%=sell.getName()%></b></h5>					
+					<p><%=sell.getPrice()%>원</p>	
 				</div>
 <!--------------------------상세 정보------------------------------------>
-							<div class="btn-container">
-								<p><a href="./info.jsp?name=<%=sell2.getName() %>"
-								class="btn btn-secondary" role="button"> 주문 하기 &raquo;</a>
-							</div>
-<!--------------------------상세 정보------------------------------------>
-			</div>
+		<div class="btn-container">
+			<p><a href="./info.jsp?name=<%=sell.getName() %>"
+			class="btn btn-outline-secondary" role="button" style="font-size: 12px; padding: 5px 10px;">자세히보기</a>
 		</div>
-		<%
-		}
-		%>		
+<!--------------------------상세 정보------------------------------------>
+ 		</div>
 	</div>
-	<br>
-			<div class="row align-items-md-stretch text-center">
-						<%
-						for (int i = 0; i < listOfSell.size(); i++) {
-							Sell sell = listOfSell.get(i);
-						%>
-						<div class="col-md-3">
-							<div class="h-100 p-2 box">
-								<img src="../resources/images/<%=sell.getFilename()%> " class="img">
-								<div class="content">
-									<h5>
-										<b><%=sell.getName()%></b>
-									</h5>
-									<p><%=sell.getDescription()%></p>
-									<p><%=sell.getPrice()%>원</p>
-								</div>
-<!--------------------------상세 정보------------------------------------>
-							<div class="btn-container">
-								<p><a href="./info.jsp?name=<%=sell.getName() %>"
-								class="btn btn-secondary" role="button"> 주문 하기 &raquo;</a>
-							</div>
-<!--------------------------상세 정보------------------------------------>
-							</div>
-						</div>
-						<%
-						}
-						%>
-				</div>
+		<%
+			}
+		%>
+	</div>
 </article>
-
-<!--------------------------판매목록------------------------------------>
+	<div class="align-itmes-md-stretch text-center" id="coffeesection">
+		<h2>커피</h2>
+		
+	<div class="align-itmes-md-stretch text-center" id="cakesection">
+		<h2>케이크</h2>
 	
-	<br>
 	<%@ include file="footer.jsp"%>
 </body>
 </html>
