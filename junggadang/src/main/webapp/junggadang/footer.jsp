@@ -15,7 +15,7 @@
 <body>
 <div class="foot">
     © 2024 정가당:
-    <a href="#" class="site">junggadang.com</a>
+    <a href="./welcome.jsp" class="site">junggadang.com</a>
 </div>
 </body>
 </html>

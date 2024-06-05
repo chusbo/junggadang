@@ -95,14 +95,14 @@ public class Fileupload_process extends HttpServlet {
 	            stock = Integer.parseInt(stockStr);
 	        }
 
-	        SellRepository create = SellRepository.getInstance();
+	        DessertRepository create = DessertRepository.getInstance();
 
-	        Sell newSell = new Sell(number, name, price, category, stock, allergy, origin);
+	        Dessert newSell = new Dessert(number, name, price, category, stock, allergy, origin);
 	        newSell.setDescription(description);
 	        newSell.setFilename(filename);
 
-	        create.addSell(newSell);
+	        create.addDessert(newSell);
 
-	        response.sendRedirect("./junggadang/sell.jsp");
+	        response.sendRedirect("./junggadang/editDessert.jsp?edit=update");
 	    }
 	}

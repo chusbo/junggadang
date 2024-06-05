@@ -1,6 +1,6 @@
-<%@page import="jung.SellRepository"%>
+<%@page import="jung.DessertRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="jung.Sell" import="jung.SellRepository" %>
+    pageEncoding="UTF-8" import="jung.Dessert" import="jung.DessertRepository" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +25,7 @@
  	 <div class="container-fluid">
   
   	 <div class="a">
-        <a href="http://localhost:8085/junggadang/junggadang/welcome.jsp"><img src="../resources/images/home.png" alt="Home"></a>
+        <a href="./welcome.jsp"><img src="../resources/images/home.png" alt="Home"></a>
         <h6 class="text"><b>정가당</b></h6>
     </div>
     
@@ -46,7 +46,13 @@
             <a class="nav-link active" aria-current="page" href="http://localhost:8085/junggadang/junggadang/sell.jsp">디저트 목록</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:8085/junggadang/junggadang/addsell.jsp">등록</a>
+            <a class="nav-link" href="./addsell.jsp">제품 등록</a>
+          </li>        
+          <li class="nav-item">
+            <a class="nav-link" href="./editDessert.jsp?edit=update">제품 수정</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="./editDessert.jsp?edit=delete">제품 삭제</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

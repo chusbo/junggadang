@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" import="java.util.ArrayList" import="jung.Sell" import="jung.Fileupload_process" isELIgnored="false" %>
-<jsp:useBean id="SellRepository" class="jung.SellRepository" scope="session" />
+	pageEncoding="UTF-8" import="java.sql.*" isELIgnored="false" %>
+<jsp:useBean id="id" class="jung.DessertRepository" scope="session" />
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <%
-	request.setCharacterEncoding("utf-8");
+request.setCharacterEncoding("utf-8");
 %>
 <!DOCTYPE html>
 <html>
@@ -80,41 +80,49 @@
 	<div class="align-itmes-md-stretch text-center" id="dessertsection">
 		<h2>디저트</h2>
 	</div>
-		<%
-			SellRepository create = SellRepository.getInstance();
-			ArrayList<Sell> listOfSell = create.getAllSell();
-		%>
+	<%@ include file="dbconn.jsp" %>
 	<div class="row align-items-md-stretch text-center">
-		<%
-			for (int i = 0; i < listOfSell.size(); i++) {
-			Sell sell = listOfSell.get(i);
-		%>
+			<%
+				PreparedStatement pstmt=null;
+				ResultSet rs=null;
+				String sql="select * from dessert";
+				pstmt=conn.prepareStatement(sql);
+				rs=pstmt.executeQuery();
+				while (rs.next()) {
+			%>
 	<div class="col-md-2" style="margin:10px;">
 		<div class="h-100 p-2 box">
-			<img src="../resources/images/<%=sell.getFilename()%> " class="img">
+			<img src="../resources/images/<%=rs.getString("filename")%> " class="img">
+				<br>
 				<div class="content">
-					<h5><b><%=sell.getName()%></b></h5>					
-					<p><%=sell.getPrice()%>원</p>	
+					<h5><b><%=rs.getString("name") %></b></h5>					
+					<p><%=rs.getString("price") %>원</p>
 				</div>
 <!--------------------------상세 정보------------------------------------>
 		<div class="btn-container">
-			<p><a href="./info.jsp?name=<%=sell.getName() %>"
-			class="btn btn-outline-secondary" role="button" style="font-size: 12px; padding: 5px 10px;">자세히보기</a>
+			<p><a href="./info.jsp?number=<%=rs.getString("number") %>"
+			class="btn btn-detail btn-bubble" role="button" style="font-size: 12px; padding: 5px 10px;">자세히보기</a>
 		</div>
 <!--------------------------상세 정보------------------------------------>
  		</div>
 	</div>
 		<%
 			}
+			if (rs!=null)
+				rs.close();
+			if (pstmt!=null)
+				pstmt.close();
+			if (conn!=null)
+				conn.close();
 		%>
 	</div>
 </article>
 	<div class="align-itmes-md-stretch text-center" id="coffeesection">
 		<h2>커피</h2>
-		
+	</div>
 	<div class="align-itmes-md-stretch text-center" id="cakesection">
 		<h2>케이크</h2>
-	
+	</div>
 	<%@ include file="footer.jsp"%>
 </body>
 </html>

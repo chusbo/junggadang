@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="java.util.ArrayList" import="jung.Sell" import="jung.SellRepository" isELIgnored="false" %>
+    pageEncoding="UTF-8" import="java.util.ArrayList" import="jung.Dessert" import="jung.DessertRepository" isELIgnored="false" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -33,7 +33,7 @@
         </div>
 <div class="all">       
 	<div class="row align-items-md-stretch">
-		<form name="newDessert" action="${contextPath}/fileupload55.do" class="form-horizontal" method="post" enctype="multipart/form-data">			
+		<form name="newDessert" action="./processAddDessert.jsp" class="form-horizontal" method="post" encType="multipart/form-data">			
 			<div class="mb-3 row">
 				<label class="col-sm-2">제품 번호</label>
 				<div class="col-sm-3">

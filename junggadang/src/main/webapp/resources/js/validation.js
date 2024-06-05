@@ -8,7 +8,7 @@ function CheckAddBook(){
 	
 	//제품코드 체크
 	if(!check(/^JGD[0-9]{4,11}$/, number, "[제품 코드]\nJGD와 숫자를 조합하여 5~12자까지 입력하세요\n첫 글자는 반드시 JGD로 시작하세요"))
-	return false;
+	return false;	
 	
 	//제품명 체크
 	if(name.value.length < 1 ||name.value.length > 10){
